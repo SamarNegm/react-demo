@@ -1,48 +1,41 @@
 import './App.css';
 import Card from './componants/Card'
 import Header from './componants/Header';
-import Slider from './componants/Slider';
 import Footer from './componants/Footer';
-import Counter from './componants/Counter';
+import Home from './componants/Home';
 import Login from './componants/Login';
-import { useState, useEffect } from 'react';
+import Error from './componants/Error';
+import About from './componants/About';
+import Profile from './componants/Profile';
+import Posts from './componants/Posts';
+import Post from './componants/Post';
+import { Routes, Route, Navigate } from "react-router-dom";
 function App() {
-  let products = [{ "Title": "product1", "price": "40" }, { "Title": "product2", "price": "30" },
+  let posts = [{ "Title": "product1", "price": "40" }, { "Title": "product2", "price": "30" },
   { "Title": "product3", "price": "50" }, { "Title": "product4", "price": "40" },
   { "Title": "product5", "price": "560" }, { "Title": "product6", "price": "450" }
   ];
 
-  let [count, setCount] = useState(0);
-  let onCountChange = (data) => {
-    setCount(data);
-    console.log(data);
-  }
-
   return (
     <>
-      {console.log(" count from parent", count)}
+
       <Header />
-      <div className=" text-center row " >
-        <Login />
-      </div>
-      <Slider count={count} />
 
-      <div className=" text-center row " >
-        <Counter onCountChange={onCountChange}></Counter>
+      <main className="mt-5">
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/post/:id" element={<Post />}>
+            <Route path=":id" element={<Post />} />
+          </Route>
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </main>
 
-      </div>
-      <div className=" text-center row " >
-        {
-          products.map((product, index) => {
-            return <Card key={index} Title={product.Title}
-              price={product.price}
-
-            />
-
-          })
-        }
-
-      </div>
 
       <Footer></Footer>
     </>

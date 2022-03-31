@@ -4,7 +4,7 @@ class MyCard extends Component {
 
     render() {
 
-        let { Title, price } = this.props;
+        let { Title, Body } = this.props;
         return (
             <Card className="col-3" style={{
                 margin: '30px',
@@ -14,7 +14,7 @@ class MyCard extends Component {
                 <Card.Body>
                     <Card.Title>{Title}</Card.Title>
                     <Card.Text>
-                        {price}$
+                        {Body}$
                     </Card.Text>
                 </Card.Body>
 
