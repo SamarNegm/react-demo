@@ -9,6 +9,8 @@ import About from './componants/About';
 import Profile from './componants/Profile';
 import Posts from './componants/Posts';
 import Post from './componants/Post';
+import ShortPolling from './componants/ShortPolling';
+import LongPolling from './componants/LongPolling';
 import { Routes, Route, Navigate } from "react-router-dom";
 function App() {
   let posts = [{ "Title": "product1", "price": "40" }, { "Title": "product2", "price": "30" },
@@ -21,10 +23,13 @@ function App() {
 
       <Header />
 
+
       <main className="mt-5">
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/ShortPolling" element={<ShortPolling />} />
+          <Route path="/LongPolling" element={<LongPolling />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
