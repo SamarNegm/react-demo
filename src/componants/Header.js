@@ -18,6 +18,7 @@ class Header extends Component {
                         <Nav.Link href="/login">Login</Nav.Link>
                         <Nav.Link href="/ShortPolling">Short Polling</Nav.Link>
                         <Nav.Link href="/LongPolling">Long Polling</Nav.Link>
+                        <Nav.Link href="/Messenger">Messenger</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

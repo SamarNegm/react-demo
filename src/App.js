@@ -12,6 +12,7 @@ import Post from './componants/Post';
 import ShortPolling from './componants/ShortPolling';
 import LongPolling from './componants/LongPolling';
 import { Routes, Route, Navigate } from "react-router-dom";
+import Messenger from './componants/messenger/Messenger';
 function App() {
   let posts = [{ "Title": "product1", "price": "40" }, { "Title": "product2", "price": "30" },
   { "Title": "product3", "price": "50" }, { "Title": "product4", "price": "40" },
@@ -30,6 +31,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/ShortPolling" element={<ShortPolling />} />
           <Route path="/LongPolling" element={<LongPolling />} />
+          <Route path="/Messenger" element={<Messenger />} />
+
           <Route path="/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
